@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests;
+namespace Integration;
 
 use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\ApiTestCase;
 
@@ -10,7 +10,6 @@ class IndexTest extends ApiTestCase
     {
         $response = static::createClient()->request('GET', '/');
 
-        $this->assertResponseIsSuccessful();
-        $this->assertJsonContains(['data' => 'Hello, world']);
+        $this->assertEquals(404, $response->getStatusCode());
     }
 }
