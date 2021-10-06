@@ -35,6 +35,7 @@ class NotificationController extends AbstractController
             );
 
 
+            $bus->dispatch($message);
 
             $response->setStatusCode(201);
         } catch (\Throwable $e) {
