@@ -3,10 +3,8 @@
 namespace Unit\Notification;
 
 use App\Service\Notification\EmailNotificationService;
-use App\Service\Notification\NotificationRouter;
 use App\Service\Notification\NotificationServiceFactory;
 use App\Service\Notification\SmsNotificationService;
-use App\ValueObject\Message;
 use PHPUnit\Framework\TestCase;
 
 class NotificationServiceFactoryTest extends TestCase
