@@ -7,9 +7,9 @@ use App\ValueObject\EmailRecipient;
 use App\ValueObject\MessageInterface;
 use App\ValueObject\RecipientInterface;
 
-class EmailNotificationService implements NotificationServiceInterface
+class SmsNotificationService implements NotificationServiceInterface
 {
-    public const CHANNEL = 'email';
+    public const CHANNEL = 'sms';
 
     public function __construct()
     {
@@ -17,12 +17,12 @@ class EmailNotificationService implements NotificationServiceInterface
 
     public function send(RecipientInterface $recipient, MessageInterface $message): void
     {
-        $this->sendEmail($recipient, $message);
+        $this->sendSms($recipient, $message);
     }
 
-    private function sendEmail(EmailRecipient $recipient, EmailMessage $message)
+    private function sendSms(SmsRecipient $recipient, SmsMessage $message)
     {
-        // TODO: Implement send() method
+        // TODO: Implement sendSms() method.
         $client = new \stdClass();
         $client->send();
     }

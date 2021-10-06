@@ -6,7 +6,7 @@ use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\ApiTestCase;
 
 class IndexTest extends ApiTestCase
 {
-    public function testSomething(): void
+    public function testNoIndexExists(): void
     {
         $response = static::createClient()->request('GET', '/');
 
