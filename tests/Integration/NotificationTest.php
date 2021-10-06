@@ -5,7 +5,6 @@ namespace Integration;
 use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\ApiTestCase;
 use App\Service\Notification\EmailNotificationService;
 use App\Service\Notification\SmsNotificationService;
-use App\ValueObject\Message;
 
 class NotificationTest extends ApiTestCase
 {

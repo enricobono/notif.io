@@ -2,10 +2,7 @@
 
 namespace App\Service\Notification;
 
-use App\ValueObject\EmailMessage;
-use App\ValueObject\EmailRecipient;
-use App\ValueObject\MessageInterface;
-use App\ValueObject\RecipientInterface;
+use App\ValueObject\Message;
 
 class EmailNotificationService implements NotificationServiceInterface
 {
@@ -13,16 +10,12 @@ class EmailNotificationService implements NotificationServiceInterface
 
     public function __construct()
     {
+        //Inject AWS PHP SDK and API KEYs configuration from config and ENV
     }
 
-    public function send(RecipientInterface $recipient, MessageInterface $message): void
+    public function send(Message $message): void
     {
-        $this->sendEmail($recipient, $message);
-    }
-
-    private function sendEmail(EmailRecipient $recipient, EmailMessage $message)
-    {
-        // TODO: Implement send() method
+        // TODO: Implement send() method using SES
         $client = new \stdClass();
         $client->send();
     }

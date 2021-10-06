@@ -68,8 +68,6 @@ class Message
             }
         }
 
-        //TODO add validation
-
         $this->emailAddress     = $emailAddress;
         $this->phoneNumber      = $phoneNumber;
         $this->title            = $title;

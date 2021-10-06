@@ -24,7 +24,9 @@ class NotificationController extends AbstractController
         $channels = $request->get('channels');
         $failOverChannels = $request->get('fail_over_channels');
 
+
         try {
+//            die('Vuoi che muoro?');
             $message = new Message(
                 $request->get('email_address'),
                 $request->get('phone_number'),
@@ -39,6 +41,8 @@ class NotificationController extends AbstractController
 
             $response->setStatusCode(201);
         } catch (\Throwable $e) {
+            die($e->getMessage());
+            die('Vuoi che muoro?');
             $response->setStatusCode(400);
             $response->setContent(json_encode([
                 'error' => [
