@@ -16,9 +16,9 @@ class Message
 
     private string $body;
 
-    private array  $channels;
+    private array $channels;
 
-    private array  $failOverChannels;
+    private array $failOverChannels;
 
     /**
      * @param string $emailAddress

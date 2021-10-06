@@ -32,7 +32,8 @@ class NotificationController extends AbstractController
                 $request->get('title'),
                 $request->get('body'),
                 is_string($channels) ? explode(',', $channels) : $channels,
-                is_null($failOverChannels) ? [] : (is_string($failOverChannels) ? explode(',', $failOverChannels) : $failOverChannels)
+                is_null($failOverChannels) ? [] :
+                    (is_string($failOverChannels) ? explode(',', $failOverChannels) : $failOverChannels)
             );
 
 
@@ -48,7 +49,6 @@ class NotificationController extends AbstractController
                     ]
                 ]
             ]));
-
         }
 
         return $response;
