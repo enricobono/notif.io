@@ -1,6 +1,6 @@
 api_platform:
-    doctrine:
-        enabled: false
+#    doctrine:
+#        enabled: false
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
     patch_formats:
