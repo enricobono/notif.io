@@ -7,14 +7,11 @@ use App\ValueObject\Message;
 class NotificationRouter
 {
 
-    private NotificationServiceFactory $notificationServiceFactory;
-
     /**
      * @param NotificationServiceFactory $notificationServiceFactory
      */
-    public function __construct(NotificationServiceFactory $notificationServiceFactory)
+    public function __construct(private NotificationServiceFactory $notificationServiceFactory)
     {
-        $this->notificationServiceFactory = $notificationServiceFactory;
     }
 
     /**

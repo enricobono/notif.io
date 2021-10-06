@@ -11,12 +11,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class NotificationController extends AbstractController
 {
-    public function __construct()
+    public function __construct(private MessageBusInterface $bus)
     {
     }
 
     #[Route('/notification', name: 'notification', methods: ['POST'])]
-    public function notification(MessageBusInterface $bus, Request $request): Response
+    public function notification(Request $request): Response
     {
         $response = new Response();
         $response->headers->set('Content-Type', 'application/json');
@@ -26,7 +26,6 @@ class NotificationController extends AbstractController
 
 
         try {
-//            die('Vuoi che muoro?');
             $message = new Message(
                 $request->get('email_address'),
                 $request->get('phone_number'),
@@ -37,12 +36,10 @@ class NotificationController extends AbstractController
             );
 
 
-            $bus->dispatch($message);
+            $this->bus->dispatch($message);
 
             $response->setStatusCode(201);
         } catch (\Throwable $e) {
-            die($e->getMessage());
-            die('Vuoi che muoro?');
             $response->setStatusCode(400);
             $response->setContent(json_encode([
                 'error' => [

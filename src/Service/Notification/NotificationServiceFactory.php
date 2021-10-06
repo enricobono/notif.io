@@ -12,7 +12,6 @@ class NotificationServiceFactory
      */
     public function getNotificationService(string $channel): NotificationServiceInterface
     {
-        //TODO test this method
         switch ($channel) {
             case SmsNotificationService::CHANNEL:
                 return new SmsNotificationService();
