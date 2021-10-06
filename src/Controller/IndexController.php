@@ -14,12 +14,8 @@ class IndexController extends AbstractController
     {
         $response = new Response();
         $response->headers->set('Content-Type', 'application/json');
-        $response->setStatusCode(200);
-        $response->setContent(json_encode([
-            'data' => 'Hello, world',
-        ]));
+        $response->setStatusCode(404);
 
         return $response;
     }
-
 }
